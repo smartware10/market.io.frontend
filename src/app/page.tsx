@@ -1,12 +1,15 @@
+import { ModeToggle } from "@/components/toggle-theme";
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
     <>
-      <h1 className="bg-blue-500 text-black p-10 text-center text-4xl">
-        Hello world!
-      </h1>
-      <div>
-        <a href={"about"}>About link</a>
-      </div>
+      <ModeToggle />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Button>Корзина</Button>
     </>
   );
 }
