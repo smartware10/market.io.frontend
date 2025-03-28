@@ -1,4 +1,4 @@
-import { ModeToggle } from "@/components/toggle-theme";
+import { ModeToggle } from "@/components/shared/toggle-theme";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
