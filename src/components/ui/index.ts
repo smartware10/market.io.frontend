@@ -1,3 +1,4 @@
+export { ModeToggle } from "./toggle-theme";
 export { Button } from "./button";
 export {
   DropdownMenu,
