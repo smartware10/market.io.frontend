@@ -17,12 +17,14 @@ function ModeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button size="icon">
+        <Button variant={"outline"} size="icon">
           <Sun
+            strokeWidth={2}
             size={22}
             className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
           />
           <Moon
+            strokeWidth={2}
             size={22}
             className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
           />
