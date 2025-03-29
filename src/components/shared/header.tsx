@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Container } from "@/components/shared";
+import { Container, Title } from "@/components/shared";
 import Image from "next/image";
 import { Button, ModeToggle } from "@/components/ui";
 import { ArrowRight, ShoppingCart, UserRound } from "lucide-react";
@@ -12,14 +12,16 @@ interface Props {
 export const Header: React.FC<Props> = ({ className }) => {
   return (
     <header className={cn("border border-b", className)}>
-      <Container className="flex items-center justify-between py-4">
+      <Container className="flex items-center justify-between py-3">
         {/* Левая часть */}
         <div className="flex items-center gap-4">
           <Image src={"/logo.svg"} alt="Logo" width={80} height={80} />
           <div>
-            <h1 className="text-2xl font-extrabold uppercase table-caption">
-              Маркет АйОу
-            </h1>
+            <Title
+              text={"Маркет АйОу"}
+              size={"logo"}
+              className={"font-extrabold uppercase table-caption"}
+            />
           </div>
         </div>
 
