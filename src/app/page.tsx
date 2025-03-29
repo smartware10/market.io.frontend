@@ -1,5 +1,5 @@
-import { ModeToggle } from "@/components/shared/toggle-theme";
-import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/shared";
+import { Button } from "@/components/ui";
 
 export default function Home() {
   return (
