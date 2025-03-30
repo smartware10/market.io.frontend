@@ -19,14 +19,17 @@ const activeIndex = 0;
 export const Categories: React.FC<Props> = ({ className }) => {
   return (
     <div
-      className={cn("inline-flex gap-1 bg-gray-50 p-1 rounded-2xl", className)}
+      className={cn(
+        "inline-flex gap-1 p-1 border-1 rounded-2xl shadow-md shadow-purple-800",
+        className,
+      )}
     >
       {cats.map((cat, index) => (
         <a
           className={cn(
-            "flex items-center font-bold h-11 rounded-2xl px-5",
+            "flex items-center h-10 rounded-2xl px-5 hover:bg-secondary/70",
             activeIndex === index &&
-              "bg-white shadow-md shadow-gray-200 text-primary",
+              "border-2 border-purple-800 text-primary hover:bg-secondary/0",
           )}
           key={index}
         >
