@@ -1,8 +1,8 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Container, Title } from "@/components/shared";
+import { Container, Title, ToggleTheme } from "@/components/shared";
 import Image from "next/image";
-import { Button, ModeToggle } from "@/components/ui";
+import { Button } from "@/components/ui";
 import { ArrowRight, ShoppingCart, UserRound } from "lucide-react";
 
 interface Props {
@@ -36,7 +36,7 @@ export const Header: React.FC<Props> = ({ className }) => {
             <span className="sr-only">Вход</span>
           </Button>
 
-          <ModeToggle />
+          <ToggleTheme />
 
           <div>
             <Button className="group relative">
