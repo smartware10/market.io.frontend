@@ -24,7 +24,7 @@ export const FilterCheckbox: React.FC<FilterCheckboxProps> = ({
         onCheckedChange={onCheckedChange}
         checked={checked}
         value={value}
-        className="rounded-[7px] w-[22px] h-[22px] cursor-pointer ml-1"
+        className="rounded-[7px] w-[22px] h-[22px] cursor-pointer"
         id={`checkbox-${String(name)}-${String(value)}`}
       />
       <label

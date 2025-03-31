@@ -4,16 +4,7 @@ import { cn } from "@/lib/utils";
 interface Props {
   className?: string;
 }
-const cats = [
-  "first",
-  "second",
-  "tree",
-  "four",
-  "five",
-  "last",
-  "fgooi",
-  "tooytt",
-];
+const cats = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
 const activeIndex = 0;
 
 export const Categories: React.FC<Props> = ({ className }) => {
