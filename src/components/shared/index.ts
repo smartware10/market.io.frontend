@@ -5,3 +5,4 @@ export { Categories } from "./categoties";
 export { SortPopup } from "./sort-popup";
 export { ToggleTheme } from "./toggle-theme";
 export { TopBar } from "./top-bar";
+export { Filters } from "./filters";
