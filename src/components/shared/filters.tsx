@@ -1,7 +1,6 @@
 import React from "react";
 import { Title, FilterCheckbox } from "@/components/shared";
 import { Input, RangeSlider } from "@/components/ui";
-import { CheckboxFiltersGroup } from "@/components/shared/checkbox-filters-group";
 
 interface Props {
   className?: string;
@@ -19,7 +18,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
         </div>
 
         <div className={"mt-5 ml-1 mr-1 pb-5 border-y border-y-primary"}>
-          <p className={"font-bold mb-3 mt-3 ml-1"}>Цена от и до:</p>
+          <p className={"font-bold mb-3 mt-6 ml-1"}>Цена от и до:</p>
           <div className={"flex ml-1 mr-1 gap-3 mb-6"}>
             <Input
               type={"number"}
@@ -41,15 +40,6 @@ export const Filters: React.FC<Props> = ({ className }) => {
             />
           </div>
         </div>
-
-        <CheckboxFiltersGroup
-          title={"Тест"}
-          items={[
-            { text: "hgf", value: "3" },
-            { text: "qwe", value: "4" },
-          ]}
-          className={"ml-1 mt-3"}
-        />
       </div>
     </>
   );
