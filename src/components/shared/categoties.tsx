@@ -11,7 +11,7 @@ export const Categories: React.FC<Props> = ({ className }) => {
   return (
     <div
       className={cn(
-        "font-bold inline-flex gap-1 p-1 border-1 rounded-2xl shadow-md shadow-purple-800",
+        "font-bold bg-white dark:bg-[#030712] inline-flex ml-1 gap-1 p-1 border-1 rounded-2xl shadow-md shadow-primary",
         className,
       )}
     >
@@ -20,7 +20,7 @@ export const Categories: React.FC<Props> = ({ className }) => {
           className={cn(
             "flex items-center h-10 rounded-2xl px-5 hover:bg-secondary/70",
             activeIndex === index &&
-              "border-2 border-purple-800 text-primary hover:bg-secondary/0",
+              "border-1 border-primary text-primary bg-secondary/70",
           )}
           key={index}
         >

@@ -11,7 +11,7 @@ interface Props {
 
 export const Header: React.FC<Props> = ({ className }) => {
   return (
-    <header className={cn("border-b border-b-purple-800/50", className)}>
+    <header className={cn("border-b border-primary", className)}>
       <Container className="flex items-center justify-between py-3">
         {/* Левая часть */}
         <div className="flex items-center gap-4">
@@ -41,8 +41,8 @@ export const Header: React.FC<Props> = ({ className }) => {
           <div>
             <Button className="group relative">
               <b>1500 ₴</b>
-              <span className="h-full w-[1px] bg-white/30 mx-3" />
-              <div className="flex items-center gap-1 transition duration-300 group-hover:opacity-0">
+              <span className="h-full w-[1px] duration-300 bg-primary-foreground group-hover:bg-primary mx-3" />
+              <div className="flex items-center gap-1 transition duration-600 group-hover:opacity-0">
                 <ShoppingCart size={22} className="relative" strokeWidth={2} />
                 <b>1000</b>
               </div>
