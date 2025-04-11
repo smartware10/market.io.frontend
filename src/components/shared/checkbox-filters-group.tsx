@@ -82,7 +82,9 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
                 }
                 setShowAll(!showAll);
               }}
-              className={"text-primary mt-3 ml-1 flex items-center"}
+              className={
+                "text-primary mt-3 ml-1 flex items-center cursor-pointer"
+              }
             >
               {showAll ? (
                 <>
