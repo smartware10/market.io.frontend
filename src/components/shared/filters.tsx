@@ -46,11 +46,23 @@ export const Filters: React.FC<Props> = ({ className }) => {
         </div>
 
         <CheckboxFiltersGroup
-          title={"Тест"}
+          title={"Производитель"}
           items={[
-            { text: "hgf", value: "3" },
-            { text: "qwe", value: "4" },
+            { text: "Acer", value: "Acer" },
+            { text: "Apple", value: "Apple" },
+            { text: "ASUS", value: "ASUS" },
+            { text: "Dell", value: "Dell" },
+            { text: "Gigabyte", value: "Gigabyte" },
+            { text: "HP", value: "HP" },
+            { text: "Huawei", value: "Huawei" },
+            { text: "Lenovo", value: "Lenovo" },
+            { text: "Microsoft", value: "Microsoft" },
+            { text: "MSI", value: "MSI" },
+            { text: "Samsung", value: "Samsung" },
+            { text: "Xiaomi", value: "Xiaomi" },
+            { text: "2E", value: "2E" },
           ]}
+          limit={6}
           className={"ml-1 mt-3"}
         />
       </div>
