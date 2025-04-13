@@ -8,4 +8,5 @@ export { TopBar } from "./top-bar";
 export { Filters } from "./filters";
 export { CheckboxFiltersGroup } from "./checkbox-filters-group";
 export { ProductCard } from "./product-card";
+export { ProductsGroupList } from "./products-group-list";
 export * from "./filter-checkbox";
