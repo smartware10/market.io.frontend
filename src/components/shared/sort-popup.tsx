@@ -10,7 +10,7 @@ export const SortPopup: React.FC<Props> = ({ className }) => {
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-1 mr-1 py-1 px-4 border-1 shadow-md shadow-primary h-[52px] rounded-2xl cursor-pointer",
+        "inline-flex bg-white dark:bg-[#030712] items-center gap-1 mr-1 py-1 px-4 border-1 shadow-md shadow-primary h-[49px] rounded-2xl cursor-pointer",
         className,
       )}
     >

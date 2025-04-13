@@ -31,7 +31,17 @@ export const ProductCard: React.FC<Props> = ({
               "flex justify-center bg-secondary rounded-lg h-[260px] p-6"
             }
           >
-            <Image width={215} height={215} src={imageUrl} alt={title} />
+            <Image
+              width={0}
+              height={0}
+              src={imageUrl}
+              sizes="100vw"
+              style={{
+                width: "auto",
+                height: "auto",
+              }}
+              alt={title}
+            />
           </div>
 
           <Title text={title} size={"sm"} className={"md-1 mt-1 font-bold"} />
@@ -40,9 +50,9 @@ export const ProductCard: React.FC<Props> = ({
 
           <div className={"flex justify-between items-center mt-4"}>
             <span className={"text-[20px]"}>
-              <b>{price} uah.</b>
+              <b>{price} &#8372;</b>
             </span>
-            <Button variant={"secondary"} className={"text-base font-bold"}>
+            <Button variant={"outline"} className={"text-base font-bold"}>
               <Plus size={20} className={"mr-1"} />
               Добавить
             </Button>

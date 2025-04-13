@@ -11,7 +11,7 @@ export const Categories: React.FC<Props> = ({ className }) => {
   return (
     <div
       className={cn(
-        "font-bold bg-white dark:bg-[#030712] inline-flex ml-1 gap-1 p-1 border-1 rounded-2xl shadow-md shadow-primary",
+        "font-bold bg-white dark:bg-[#030712] inline-flex ml-1 gap-1 p-1 h-[49px] border-1 rounded-2xl shadow-md shadow-primary",
         className,
       )}
     >
