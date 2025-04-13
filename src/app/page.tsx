@@ -25,6 +25,7 @@ export default function Home() {
             <div className={"flex flex-col gap-16"}>
               <ProductsGroupList
                 title={"Компьютеры"}
+                categoryId={1}
                 items={[
                   {
                     id: 1,
@@ -75,11 +76,11 @@ export default function Home() {
                     price: 5500,
                   },
                 ]}
-                categoryId={1}
               />
 
               <ProductsGroupList
                 title={"Планшеты"}
+                categoryId={2}
                 items={[
                   {
                     id: 1,
@@ -106,11 +107,11 @@ export default function Home() {
                     price: 5660,
                   },
                 ]}
-                categoryId={2}
               />
 
               <ProductsGroupList
                 title={"Смартфоны"}
+                categoryId={3}
                 items={[
                   {
                     id: 1,
@@ -145,8 +146,9 @@ export default function Home() {
                     price: 100,
                   },
                 ]}
-                categoryId={3}
               />
+
+              <ProductsGroupList title={"Мониторы"} categoryId={4} items={[]} />
             </div>
           </div>
         </div>
