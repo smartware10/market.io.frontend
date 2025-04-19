@@ -33,13 +33,16 @@ export const ProductsGroupList: React.FC<Props> = ({
   const intersectionRef = React.useRef(null);
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
-  const intersection = useIntersection(intersectionRef, { threshold: 0.4 });
+  const intersection = useIntersection(intersectionRef, {
+    threshold: 0.4,
+  });
 
   React.useEffect(() => {
     if (intersection?.isIntersecting) {
       setActiveCategoryId(categoryId);
     }
   }, [categoryId, intersection?.isIntersecting, setActiveCategoryId]);
+
   return (
     <>
       <div className={className} id={title} ref={intersectionRef}>

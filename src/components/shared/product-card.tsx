@@ -41,6 +41,7 @@ export const ProductCard: React.FC<Props> = ({
                 height: "auto",
               }}
               alt={title}
+              priority={true}
             />
           </div>
 
