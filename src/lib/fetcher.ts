@@ -40,7 +40,19 @@ const request = async <T>(
       return null;
     }
 
-    return await res.json();
+    // Проверяем, есть ли в ответе тело, и пытаемся парсить его
+    const text = await res.text();
+    if (text) {
+      try {
+        return JSON.parse(text);
+      } catch (jsonError) {
+        console.error(`Ошибка при парсинге JSON: ${jsonError}`);
+        return null;
+      }
+    }
+
+    // Если тела ответа нет, возвращаем null
+    return null;
   } catch (err) {
     clearTimeout(timeout);
     console.error("Fetch error:", err);

@@ -1,7 +1,11 @@
-import { getAllCategories } from "@/lib/api/categories";
+import { createCategory, getAllCategories } from "@/lib/api/categories";
 
 export default async function CategoriesList() {
   const categories = await getAllCategories();
+  const cat = await createCategory(
+    { name: "sussus", description: "Sussus", parent_id: 5 },
+    "",
+  );
 
   return (
     <div>
