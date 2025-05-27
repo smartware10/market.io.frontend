@@ -6,16 +6,12 @@ import { useCategoryStore } from "@/store";
 
 interface Props {
   className?: string;
+  categories: { id: number; name: string }[];
 }
-const cats = [
-  { id: 1, name: "Компьютеры" },
-  { id: 2, name: "Планшеты" },
-  { id: 3, name: "Смартфоны" },
-  { id: 4, name: "Мониторы" },
-];
 
-export const Categories: React.FC<Props> = ({ className }) => {
+export const Categories: React.FC<Props> = ({ className, categories }) => {
   const categoryActiveId = useCategoryStore((state) => state.activeId);
+
   return (
     <div
       className={cn(
@@ -23,19 +19,25 @@ export const Categories: React.FC<Props> = ({ className }) => {
         className,
       )}
     >
-      {cats.map(({ id, name }, index) => (
-        <a
-          className={cn(
-            "flex items-center h-10 rounded-2xl px-5 hover:bg-secondary/70",
-            categoryActiveId === id &&
-              "border-1 border-primary text-primary bg-secondary/70",
-          )}
-          href={`#${name}`}
-          key={index}
-        >
-          <button>{name}</button>
-        </a>
-      ))}
+      {Array.isArray(categories) && categories.length > 0 ? (
+        categories.map(({ id, name }) => (
+          <a
+            key={id}
+            href={`#${name}`}
+            className={cn(
+              "flex items-center h-10 rounded-2xl px-5 hover:bg-secondary/70",
+              categoryActiveId === id &&
+                "border-1 border-primary text-primary bg-secondary/70",
+            )}
+          >
+            <button>{name}</button>
+          </a>
+        ))
+      ) : (
+        <span className="px-4 py-2 text-muted-foreground">
+          Нет категорий (ошибка загрузки)
+        </span>
+      )}
     </div>
   );
 };

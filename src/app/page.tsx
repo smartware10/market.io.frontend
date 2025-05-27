@@ -5,7 +5,6 @@ import {
   TopBar,
   ProductsGroupList,
 } from "@/components/shared";
-import CategoriesList from "@/components/shared/cat";
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
 
       <Container className={"mt-5 pb-14"}>
         <div className={"flex gap-[40px]"}>
-          <CategoriesList />
           <div className={"w-[250px]"}>
             <Filters />
           </div>

@@ -16,6 +16,7 @@ html {
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
   border-radius: calc(infinity * 1px);
 }
 
@@ -28,6 +29,8 @@ html {
   background-color: color-mix(in oklab, var(--primary) 60%, transparent);
   border-radius: calc(infinity * 1px);
 }
+
+.custom-scrollbar::-webkit-scrollbar-corner {display: none;}
 
 .custom-scrollbar:hover::-webkit-scrollbar-thumb {
   background-color: var(--color-primary);
@@ -42,9 +45,10 @@ html {
   background-color: transparent;
 }
 
-&::-webkit-scrollbar {width: 8px; border-radius: calc(infinity * 1px);}
+&::-webkit-scrollbar {width: 8px; height: 8px; border-radius: calc(infinity * 1px);}
 &::-webkit-scrollbar-track {border-radius: calc(infinity * 1px); background-color: transparent;}
 &::-webkit-scrollbar-thumb {border-radius: calc(infinity * 1px); background-color: color-mix(in oklab, var(--primary) 60%, transparent);}
+&::-webkit-scrollbar-corner {display: none;}
 &::-webkit-scrollbar-thumb:hover {cursor: pointer; border-radius: calc(infinity * 1px); background-color: var(--color-primary);}
 
 

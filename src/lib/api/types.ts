@@ -160,15 +160,18 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/v1/users/all_users/": {
+    "/api/v1/users/": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        /** Users:Get All Users */
-        get: operations["users_get_all_users_api_v1_users_all_users__get"];
+        /**
+         * Users:Get All Users
+         * @description <h1>Get a list of all users</h1>
+         */
+        get: operations["users_get_all_users_api_v1_users__get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -184,10 +187,16 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Categories:Get All Categories */
+        /**
+         * Categories:Get All Categories
+         * @description <h1>Get all categories</h1>
+         */
         get: operations["categories_get_all_categories_api_v1_categories__get"];
         put?: never;
-        /** Categories:Create A New Category */
+        /**
+         * Categories:Create A New Category
+         * @description <h1>Create a new category</h1>
+         */
         post: operations["categories_create_a_new_category_api_v1_categories__post"];
         delete?: never;
         options?: never;
@@ -219,7 +228,10 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Categories:Get Category By Id */
+        /**
+         * Categories:Get Category By Id
+         * @description <h1>Get category by ID</h1>
+         */
         get: operations["categories_get_category_by_id_api_v1_categories__category_id___get"];
         put?: never;
         post?: never;
@@ -359,89 +371,89 @@ export interface components {
         };
         /**
          * CategoryCreate
-         * @description Схема для создания категории
+         * @description Schema for creating a category
          */
         CategoryCreate: {
             /**
-             * Название категории
-             * @description Уникальное название категории, от 3 до 32 символов.
+             * Category Name
+             * @description Unique category name, between 3 and 32 characters.
              */
             name: string;
             /**
-             * Описание категории
-             * @description Краткое описание категории (необязательно), от 3 до 128 символов.
+             * Category Description
+             * @description A short description of the category (optional), between 3 and 128 characters.
              */
             description?: string | null;
             /**
-             * ID родительской категории
-             * @description ID родительской категории, если эта категория является подкатегорией.
+             * Parent Category ID
+             * @description ID of the parent category, if this is a subcategory.
              */
             parent_id?: number | null;
         };
         /**
          * CategoryRead
-         * @description Схема для чтения категории
+         * @description Schema for reading a category
          */
         CategoryRead: {
             /**
-             * Название категории
-             * @description Уникальное название категории, от 3 до 32 символов.
+             * Category Name
+             * @description Unique category name, between 3 and 32 characters.
              */
             name: string;
             /**
-             * Описание категории
-             * @description Краткое описание категории (необязательно), от 3 до 128 символов.
+             * Category Description
+             * @description A short description of the category (optional), between 3 and 128 characters.
              */
             description?: string | null;
             /**
-             * ID родительской категории
-             * @description ID родительской категории, если эта категория является подкатегорией.
+             * Parent Category ID
+             * @description ID of the parent category, if this is a subcategory.
              */
             parent_id?: number | null;
             /**
-             * ID категории
-             * @description Уникальный идентификатор категории.
+             * Category ID
+             * @description Unique identifier of the category.
              */
             id: number;
         };
         /**
          * CategoryReadList
-         * @description Схема для чтения списка категорий
+         * @description Schema for reading a list of categories
          */
         CategoryReadList: components["schemas"]["CategoryRead"][];
         /**
          * CategoryReadListWithProducts
-         * @description Схема для чтения списка категорий с продуктами
+         * @description Schema for reading a list of categories with products
          */
         CategoryReadListWithProducts: components["schemas"]["CategoryReadWithProduct"][];
         /**
          * CategoryReadWithProduct
-         * @description Схема для чтения категории со списком продуктов
+         * @description Schema for reading a category with a list of products
          */
         CategoryReadWithProduct: {
             /**
-             * Название категории
-             * @description Уникальное название категории, от 3 до 32 символов.
+             * Category Name
+             * @description Unique category name, between 3 and 32 characters.
              */
             name: string;
             /**
-             * Описание категории
-             * @description Краткое описание категории (необязательно), от 3 до 128 символов.
+             * Category Description
+             * @description A short description of the category (optional), between 3 and 128 characters.
              */
             description?: string | null;
             /**
-             * ID родительской категории
-             * @description ID родительской категории, если эта категория является подкатегорией.
+             * Parent Category ID
+             * @description ID of the parent category, if this is a subcategory.
              */
             parent_id?: number | null;
             /**
-             * ID категории
-             * @description Уникальный идентификатор категории.
+             * Category ID
+             * @description Unique identifier of the category.
              */
             id: number;
             /**
-             * Продукты категории
-             * @description Список продуктов, связанных с этой категорией.
+             * Category Products
+             * @description List of products associated with this category.
              */
             products?: components["schemas"]["ProductRead"][] | null;
         };
@@ -459,330 +471,391 @@ export interface components {
         };
         /**
          * ProductCreate
-         * @description Схема для создания продукта
+         * @description Schema for creating a product
          */
         ProductCreate: {
             /**
-             * Название товара
-             * @description Полное название товара
+             * Product Name
+             * @description Full name of the product
              */
             name: string;
             /**
-             * Описание
-             * @description Краткое описание товара
+             * Description
+             * @description Short description of the product
              */
             description: string;
             /**
-             * Цена
-             * @description Цена товара
+             * Price
+             * @description Product price
              */
             price: number;
             /**
-             * ID категории
-             * @description Идентификатор категории, к которой относится товар
+             * Category ID
+             * @description ID of the category the product belongs to
              */
             category_id: number;
         };
         /**
          * ProductRead
-         * @description Схема для чтения продукта
+         * @description Schema for reading a product
          */
         ProductRead: {
             /**
-             * Название товара
-             * @description Полное название товара
+             * Product Name
+             * @description Full name of the product
              */
             name: string;
             /**
-             * Описание
-             * @description Краткое описание товара
+             * Description
+             * @description Short description of the product
              */
             description: string;
             /**
-             * Цена
-             * @description Цена товара
+             * Price
+             * @description Product price
              */
             price: number;
             /**
-             * ID категории
-             * @description Идентификатор категории, к которой относится товар
+             * Category ID
+             * @description ID of the category the product belongs to
              */
             category_id: number;
             /**
-             * ID товара
-             * @description Уникальный идентификатор товара
+             * Product ID
+             * @description Unique identifier of the product
              */
             id: number;
         };
         /**
          * ProductReadList
-         * @description Схема для чтения списка продуктов
+         * @description Schema for reading a list of products
          */
         ProductReadList: components["schemas"]["ProductRead"][];
         /**
          * ProductUpdate
-         * @description Схема для обновления продукта
+         * @description Schema for updating a product
          */
         ProductUpdate: {
             /**
-             * Название товара
-             * @description Полное название товара
+             * Product Name
+             * @description Full name of the product
              */
             name: string;
             /**
-             * Описание
-             * @description Краткое описание товара
+             * Description
+             * @description Short description of the product
              */
             description: string;
             /**
-             * Цена
-             * @description Цена товара
+             * Price
+             * @description Product price
              */
             price: number;
             /**
-             * ID категории
-             * @description Идентификатор категории, к которой относится товар
+             * Category ID
+             * @description ID of the category the product belongs to
              */
             category_id: number;
         };
         /**
          * ProductUpdatePartial
-         * @description Схема для частичного обновления продукта
+         * @description Schema for partially updating a product
          */
         ProductUpdatePartial: {
             /**
-             * Название товара
-             * @description Полное название товара (опционально)
+             * Product Name
+             * @description Full product name (optional)
              */
             name?: string | null;
             /**
-             * Описание
-             * @description Краткое описание товара (опционально)
+             * Description
+             * @description Short product description (optional)
              */
             description?: string | null;
             /**
-             * Цена
-             * @description Цена товара в рублях (опционально)
+             * Price
+             * @description Product price in rubles (optional)
              */
             price?: number | null;
             /**
-             * ID категории
-             * @description Идентификатор категории (опционально)
+             * Category ID
+             * @description Category identifier (optional)
              */
             category_id?: number | null;
         };
         /**
          * SubCategoryBase
-         * @description Схема для чтения подкатегорий выбраной категории
+         * @description Schema for reading subcategories of a selected category
          */
         SubCategoryBase: {
             /**
-             * Название категории
-             * @description Уникальное название категории, от 3 до 32 символов.
+             * Category Name
+             * @description Unique category name, between 3 and 32 characters.
              */
             name: string;
             /**
-             * Описание категории
-             * @description Краткое описание категории (необязательно), от 3 до 128 символов.
+             * Category Description
+             * @description A short description of the category (optional), between 3 and 128 characters.
              */
             description?: string | null;
             /**
-             * ID родительской категории
-             * @description ID родительской категории, если эта категория является подкатегорией.
+             * Parent Category ID
+             * @description ID of the parent category, if this is a subcategory.
              */
             parent_id?: number | null;
             /**
-             * ID категории
-             * @description Уникальный идентификатор категории.
+             * Category ID
+             * @description Unique identifier of the category.
              */
             id: number;
             /**
-             * Подкатегории
-             * @description Список вложенных подкатегорий (если есть).
+             * Subcategories
+             * @description List of nested subcategories (if any).
              */
             subcategories?: components["schemas"]["CategoryRead"][] | null;
         };
         /**
-         * Профиль пользователя
-         * @description Схема для создания нового пользователя.
+         * UserCreate
+         * @description Schema for creating a new user.
          */
         UserCreate: {
             /**
              * Email
-             * Format: email
-             * @description Электронная почта пользователя (уникальная)
+             * Format: email, unique
+             * @description User's email (must be unique)
+             * @example example@market.io
              */
             email: string;
             /**
              * Password
-             * @description Пароль пользователя (не менее 8 символов)
+             * @description User password (minimum 8 characters)
+             * @example MyStrongPassword123
              */
             password: string;
             /**
              * Is Active
-             * @description Признак того, что пользователь активен
+             * Format: boolean
+             * @description Indicates whether the user is active
              * @default true
+             * @example true
              */
-            is_active: boolean | null;
+            readonly is_active: boolean | null;
             /**
              * Is Superuser
-             * @description Признак того, что пользователь является суперпользователем
+             * Format: boolean
+             * @description Indicates whether the user is a superuser
              * @default false
+             * @example false
              */
-            is_superuser: boolean | null;
+            readonly is_superuser: boolean | null;
             /**
              * Is Verified
-             * @description Признак того, что электронная почта подтверждена
+             * Format: boolean
+             * @description Indicates whether the email is verified
              * @default false
+             * @example true
              */
-            is_verified: boolean | null;
+            readonly is_verified: boolean | null;
             /**
              * Username
-             * @description Имя пользователя (никнейм)
+             * Format: string
+             * @description Username (up to 32 characters)
              */
             username?: string | null;
             /**
              * First Name
-             * @description Имя
+             * Format: string
+             * @description First name (up to 32 characters)
              */
             first_name?: string | null;
             /**
              * Last Name
-             * @description Фамилия
+             * Format: string
+             * @description Last name (up to 32 characters)
              */
             last_name?: string | null;
             /**
              * Middle Name
-             * @description Отчество
+             * Format: string
+             * @description Middle name (up to 32 characters)
              */
             middle_name?: string | null;
             /**
              * Birth Date
-             * @description Дата рождения
+             * Format: date, YYYY-MM-DD
+             * @description Birth date (in format 'YYYY-MM-DD')
+             * @example 2020-01-20
              */
             birth_date?: string | null;
+            /**
+             * Password Repeat
+             * @description Password confirmation
+             * @example MyStrongPassword123
+             */
+            password_repeat: string;
         };
         /**
-         * Профиль пользователя
-         * @description Расширенная схема чтения пользователя, включая базовые поля из FastAPI Users.
+         * UserRead
+         * @description Schema for reading a user, including base fields from FastAPI Users.
          */
         UserRead: {
             /**
              * Id
-             * @description Уникальный идентификатор пользователя
+             * Format: integer, unique
+             * @description Unique user identifier
              */
-            id: number;
+            readonly id: number;
             /**
              * Email
-             * Format: email
-             * @description Электронная почта пользователя (уникальная)
+             * Format: email, unique
+             * @description User's email (must be unique)
+             * @example example@market.io
              */
             email: string;
             /**
              * Is Active
-             * @description Признак того, что пользователь активен
+             * Format: boolean
+             * @description Indicates whether the user is active
              * @default true
+             * @example true
              */
-            is_active: boolean | null;
+            readonly is_active: boolean | null;
             /**
              * Is Superuser
-             * @description Признак того, что пользователь является суперпользователем
+             * Format: boolean
+             * @description Indicates whether the user is a superuser
              * @default false
+             * @example false
              */
-            is_superuser: boolean | null;
+            readonly is_superuser: boolean | null;
             /**
              * Is Verified
-             * @description Признак того, что электронная почта подтверждена
+             * Format: boolean
+             * @description Indicates whether the email is verified
              * @default false
+             * @example true
              */
-            is_verified: boolean | null;
+            readonly is_verified: boolean | null;
             /**
              * Username
-             * @description Имя пользователя (никнейм)
+             * Format: string
+             * @description Username (up to 32 characters)
              */
             username?: string | null;
             /**
              * First Name
-             * @description Имя
+             * Format: string
+             * @description First name (up to 32 characters)
              */
             first_name?: string | null;
             /**
              * Last Name
-             * @description Фамилия
+             * Format: string
+             * @description Last name (up to 32 characters)
              */
             last_name?: string | null;
             /**
              * Middle Name
-             * @description Отчество
+             * Format: string
+             * @description Middle name (up to 32 characters)
              */
             middle_name?: string | null;
             /**
              * Birth Date
-             * @description Дата рождения
+             * Format: date, YYYY-MM-DD
+             * @description Birth date (in format 'YYYY-MM-DD')
+             * @example 2020-01-20
              */
             birth_date?: string | null;
             /**
              * Registered On
-             * Format: date-time
-             * @description Дата и время регистрации пользователя
+             * Format: datetime
+             * @description User registration date and time
+             * @example 22/11/2001, 19:14:01
              */
-            registered_on: string;
+            readonly registered_on: string;
         };
         /**
-         * Профиль пользователя
-         * @description Схема для обновления данных пользователя.
+         * UserReadList
+         * @description Schema for reading a list of users.
+         */
+        UserReadList: components["schemas"]["UserRead"][];
+        /**
+         * UserUpdate
+         * @description Schema for updating user data.
          */
         UserUpdate: {
             /**
              * Password
-             * @description Новый пароль пользователя
+             * @description New user password
+             * @example MyStrongPassword123
              */
             password?: string | null;
             /**
              * Email
-             * @description Обновлённая электронная почта пользователя
+             * Format: email, unique
+             * @description Updated user email
+             * @example example@market.io
              */
             email?: string | null;
             /**
              * Is Active
-             * @description Изменить статус активности пользователя
+             * Format: boolean
+             * @description Change user active status
+             * @example false
              */
             is_active?: boolean | null;
             /**
              * Is Superuser
-             * @description Изменить статус суперпользователя
+             * Format: boolean
+             * @description Change user superuser status
+             * @example true
              */
             is_superuser?: boolean | null;
             /**
              * Is Verified
-             * @description Подтверждена ли почта пользователя
+             * Format: boolean
+             * @description Indicates if the user's email is verified
+             * @example true
              */
             is_verified?: boolean | null;
             /**
              * Username
-             * @description Обновлённое имя пользователя
+             * Format: string
+             * @description Updated username
              */
             username?: string | null;
             /**
              * First Name
-             * @description Обновлённое имя
+             * Format: string
+             * @description Updated first name
              */
             first_name?: string | null;
             /**
              * Last Name
-             * @description Обновлённая фамилия
+             * Format: string
+             * @description Updated last name
              */
             last_name?: string | null;
             /**
              * Middle Name
-             * @description Обновлённое отчество
+             * Format: string
+             * @description Updated middle name
              */
             middle_name?: string | null;
             /**
              * Birth Date
-             * @description Обновлённая дата рождения
+             * Format: date, YYYY-MM-DD
+             * @description Updated birth date
+             * @example 2020-01-20
              */
             birth_date?: string | null;
+            /**
+             * Password Repeat
+             * @description Password confirmation
+             * @example MyStrongPassword123
+             */
+            password_repeat?: string | null;
         };
         /** ValidationError */
         ValidationError: {
@@ -821,6 +894,10 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
+                    /** @example {
+                     *       "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOTIyMWZmYzktNjQwZi00MzcyLTg2ZDMtY2U2NDJjYmE1NjAzIiwiYXVkIjoiZmFzdGFwaS11c2VyczphdXRoIiwiZXhwIjoxNTcxNTA0MTkzfQ.M10bjOe45I5Ncu_uXvOmVV8QxnL-nZfcH96U90JaocI",
+                     *       "token_type": "bearer"
+                     *     } */
                     "application/json": components["schemas"]["BearerResponse"];
                 };
             };
@@ -1306,7 +1383,7 @@ export interface operations {
             };
         };
     };
-    users_get_all_users_api_v1_users_all_users__get: {
+    users_get_all_users_api_v1_users__get: {
         parameters: {
             query?: never;
             header?: never;
@@ -1321,18 +1398,25 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["UserRead"][];
+                    "application/json": components["schemas"]["UserReadList"];
                 };
             };
-            /** @description Unauthorized: Missing or invalid token. */
+            /** @description Missing token or inactive user */
             401: {
                 headers: {
                     [name: string]: unknown;
                 };
                 content?: never;
             };
-            /** @description Forbidden: User is not a superuser. */
+            /** @description Not a superuser */
             403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
                 headers: {
                     [name: string]: unknown;
                 };
@@ -1358,6 +1442,20 @@ export interface operations {
                     "application/json": components["schemas"]["CategoryReadList"];
                 };
             };
+            /** @description There are no categories */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
         };
     };
     categories_create_a_new_category_api_v1_categories__post: {
@@ -1382,6 +1480,38 @@ export interface operations {
                     "application/json": components["schemas"]["CategoryRead"];
                 };
             };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Missing token or inactive user */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not a superuser */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Category already exists */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
             /** @description Validation Error */
             422: {
                 headers: {
@@ -1390,6 +1520,13 @@ export interface operations {
                 content: {
                     "application/json": components["schemas"]["HTTPValidationError"];
                 };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
             };
         };
     };
@@ -1410,6 +1547,20 @@ export interface operations {
                 content: {
                     "application/json": components["schemas"]["CategoryReadListWithProducts"];
                 };
+            };
+            /** @description There are no categories */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
             };
         };
     };
@@ -1433,6 +1584,13 @@ export interface operations {
                     "application/json": components["schemas"]["CategoryRead"];
                 };
             };
+            /** @description The category does not exist */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
             /** @description Validation Error */
             422: {
                 headers: {
@@ -1441,6 +1599,13 @@ export interface operations {
                 content: {
                     "application/json": components["schemas"]["HTTPValidationError"];
                 };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
             };
         };
     };
@@ -1464,6 +1629,13 @@ export interface operations {
                     "application/json": components["schemas"]["SubCategoryBase"];
                 };
             };
+            /** @description The category does not exist */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
             /** @description Validation Error */
             422: {
                 headers: {
@@ -1472,6 +1644,13 @@ export interface operations {
                 content: {
                     "application/json": components["schemas"]["HTTPValidationError"];
                 };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
             };
         };
     };
